@@ -47,13 +47,13 @@ a1 %>%
 
 pool.r.squared(block1a)
 ####standardized betas and standard errors
-block1as <- with(dataimp2p, stats::lm(scale(adaptiveCoping) ~ scale(age) + gender + educationGroup))
+block1as <- with(dataimp2, stats::lm(scale(adaptiveCoping) ~ scale(age) + gender + educationGroup))
 as1 <- summary(mice::pool(block1as))
 as1 %>% 
   kbl() %>% 
   kable_material()
 #block2
-block2a <- with(dataimp2p, stats::lm(adaptiveCoping ~ age + gender + educationGroup  
+block2a <- with(dataimp2, stats::lm(adaptiveCoping ~ age + gender + educationGroup  
                                     + diagnosis_year + relaps + pain + sadness))
 a2 <- summary(mice::pool(block2a))
 a2 %>% 
@@ -62,14 +62,14 @@ a2 %>%
 
 pool.r.squared(block2a)
 ####standardized betas and standard errors
-block2as <- with(dataimp2p, stats::lm(scale(adaptiveCoping) ~ scale(age) + gender + educationGroup  
+block2as <- with(dataimp2, stats::lm(scale(adaptiveCoping) ~ scale(age) + gender + educationGroup  
                                      + scale(diagnosis_year) + relaps + scale(pain) + scale(sadness)))
 as2 <- summary(mice::pool(block2as))
 as2 %>% 
   kbl() %>% 
   kable_material()
 #block3
-block3a <- with(dataimp2p, stats::lm(adaptiveCoping ~ age + gender + educationGroup 
+block3a <- with(dataimp2, stats::lm(adaptiveCoping ~ age + gender + educationGroup 
                                     + diagnosis_year + relaps + pain + sadness 
                                     + familySocialSupport + friendSocialSupport + importantPersonsSocialSupport + social_support_medical + cancerSupportGroup))
 a3 <- summary(mice::pool(block3a))
@@ -79,7 +79,7 @@ a3 %>%
 
 pool.r.squared(block3a)
 ####standardized betas and standard errors
-block3as <- with(dataimp2p, stats::lm(scale(adaptiveCoping) ~ scale(age) + gender + educationGroup 
+block3as <- with(dataimp2, stats::lm(scale(adaptiveCoping) ~ scale(age) + gender + educationGroup 
                                      + scale(diagnosis_year) + relaps + scale(pain) + scale(sadness) 
                                      + scale(familySocialSupport) + scale(friendSocialSupport) + scale(importantPersonsSocialSupport) + scale(social_support_medical) + cancerSupportGroup))
 as3 <- summary(mice::pool(block3as))
@@ -87,7 +87,7 @@ as3 %>%
   kbl() %>% 
   kable_material()
 #block4
-block4a <- with(dataimp2p, stats::lm(adaptiveCoping ~ age + gender + educationGroup  
+block4a <- with(dataimp2, stats::lm(adaptiveCoping ~ age + gender + educationGroup  
                                     + diagnosis_year + relaps + pain + sadness 
                                     + familySocialSupport + friendSocialSupport + importantPersonsSocialSupport + social_support_medical + cancerSupportGroup
                                     + neuroticism + pesimism + optimism))
@@ -98,7 +98,7 @@ a4 %>%
 
 pool.r.squared(block4a)
 ####standardized betas and standard errors
-block4as <- with(dataimp2p, stats::lm(scale(adaptiveCoping) ~ scale(age) + gender + educationGroup  
+block4as <- with(dataimp2, stats::lm(scale(adaptiveCoping) ~ scale(age) + gender + educationGroup  
                                      + scale(diagnosis_year) + relaps + scale(pain) + scale(sadness) 
                                      + scale(familySocialSupport) + scale(friendSocialSupport) + scale(importantPersonsSocialSupport) + scale(social_support_medical) + cancerSupportGroup
                                      + scale(neuroticism) + scale(pesimism) + scale(optimism)))
@@ -110,20 +110,20 @@ as4 %>%
 anova(block1a,block2a,block3a,block4a) #comparing models
 
 ####maladaptive coping as a criterion
-block1b <- with(dataimp2p, stats::lm(maladaptiveCoping ~ age + gender + educationGroup))
+block1b <- with(dataimp2, stats::lm(maladaptiveCoping ~ age + gender + educationGroup))
 b1 <- summary(mice::pool(block1b))
 b1 %>% 
   kbl() %>% 
   kable_material()
 pool.r.squared(block1b)
 ####standardized betas and standard errors
-block1bs <- with(dataimp2p, stats::lm(scale(maladaptiveCoping) ~ scale(age) + gender + educationGroup))
+block1bs <- with(dataimp2, stats::lm(scale(maladaptiveCoping) ~ scale(age) + gender + educationGroup))
 bs1 <- summary(mice::pool(block1bs))
 bs1 %>% 
   kbl() %>% 
   kable_material()
 #block2
-block2b <- with(dataimp2p, stats::lm(maladaptiveCoping ~ age + gender + educationGroup  
+block2b <- with(dataimp2, stats::lm(maladaptiveCoping ~ age + gender + educationGroup  
                                     + diagnosis_year + relaps + pain + sadness))
 b2 <- summary(mice::pool(block2b))
 b2 %>% 
@@ -131,14 +131,14 @@ b2 %>%
   kable_material()
 pool.r.squared(block2b)
 ####standardized betas and standard errors
-block2bs <- with(dataimp2p, stats::lm(scale(maladaptiveCoping) ~ scale(age) + gender + educationGroup  
+block2bs <- with(dataimp2, stats::lm(scale(maladaptiveCoping) ~ scale(age) + gender + educationGroup  
                                      + scale(diagnosis_year) + relaps + scale(pain) + scale(sadness)))
 bs2 <- summary(mice::pool(block2bs))
 bs2 %>% 
   kbl() %>% 
   kable_material()
 #block3
-block3b <- with(dataimp2p, stats::lm(maladaptiveCoping ~ age + gender + educationGroup  
+block3b <- with(dataimp2, stats::lm(maladaptiveCoping ~ age + gender + educationGroup  
                                     + diagnosis_year + relaps + pain + sadness 
                                     + familySocialSupport + friendSocialSupport + importantPersonsSocialSupport + social_support_medical + cancerSupportGroup))
 b3 <- summary(mice::pool(block3b))
@@ -148,7 +148,7 @@ b3 %>%
 pool.r.squared(block3b)
 
 ####standardized betas and standard errors
-block3bs <- with(dataimp2p, stats::lm(scale(maladaptiveCoping) ~ scale(age) + gender + educationGroup 
+block3bs <- with(dataimp2, stats::lm(scale(maladaptiveCoping) ~ scale(age) + gender + educationGroup 
                                      + scale(diagnosis_year) + relaps + scale(pain) + scale(sadness) 
                                      + scale(familySocialSupport) + scale(friendSocialSupport) + scale(importantPersonsSocialSupport) + scale(social_support_medical) + cancerSupportGroup))
 bs3 <- summary(mice::pool(block3bs))
@@ -156,7 +156,7 @@ bs3 %>%
   kbl() %>% 
   kable_material()
 #block4
-block4b <- with(dataimp2p, stats::lm(adaptiveCoping ~ age + gender + educationGroup  
+block4b <- with(dataimp2, stats::lm(maladaptiveCoping ~ age + gender + educationGroup  
                                     + diagnosis_year + relaps + pain + sadness 
                                     + familySocialSupport + friendSocialSupport + importantPersonsSocialSupport + social_support_medical + cancerSupportGroup
                                     + neuroticism + pesimism + optimism))
@@ -166,7 +166,7 @@ b4 %>%
   kable_material()
 pool.r.squared(block4b)
 ####standardized betas and standard errors
-block4bs <- with(dataimp2p, stats::lm(scale(maladaptiveCoping) ~ scale(age) + gender + educationGroup  
+block4bs <- with(dataimp2, stats::lm(scale(maladaptiveCoping) ~ scale(age) + gender + educationGroup  
                                      + scale(diagnosis_year) + relaps + scale(pain) + scale(sadness) 
                                      + scale(familySocialSupport) + scale(friendSocialSupport) + scale(importantPersonsSocialSupport) + scale(social_support_medical) + cancerSupportGroup
                                      + scale(neuroticism) + scale(pesimism) + scale(optimism)))
@@ -189,8 +189,8 @@ yarrr::pirateplot(adaptiveCoping ~ relaps,
                   cap.beans = TRUE,
                   cex.lab = 1.3,
                   cex.names = 1.3,
-                  ylab = "Adaptive coping", xlab = "relaps of cancer",
-                  main = "Adaptive coping in group of patients with and without cancer relaps")
+                  ylab = "Adaptive coping", xlab = "relapse of cancer",
+                  main = "Adaptive coping in group of patients with and without cancer relapse")
 #cancer support group
 yarrr::pirateplot(adaptiveCoping ~ cancerSupportGroup, 
                   data = dataSupplementaryFigures, 
@@ -242,8 +242,8 @@ yarrr::pirateplot(maladaptiveCoping ~ relaps,
                   cap.beans = TRUE,
                   cex.lab = 1.3,
                   cex.names = 1.3,
-                  ylab = "Maladaptive coping", xlab = "relaps of cancer",
-                  main = "Maladaptive coping in group of patients with and without cancer relaps")
+                  ylab = "Maladaptive coping", xlab = "relapse of cancer",
+                  main = "Maladaptive coping in group of patients with and without cancer relapse")
 
 #cancer support group
 yarrr::pirateplot(maladaptiveCoping ~ cancerSupportGroup, 
